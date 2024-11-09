@@ -1,0 +1,423 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-decoration: none;
+}
+
+.content {
+  min-height: calc(100vh - 200px);
+  padding: 50px;
+  flex: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 100px;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar .brand,
+.navbar .logo {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000000;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar .nav-links a,
+.navbar nav a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.navbar .add-plant {
+  padding: 8px 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.header {
+  margin: 30px;
+  background-image: url('../images/planteer2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+  padding: 180px 20px;
+  text-align: center;
+  color: black;
+}
+
+.header h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  font-size: 1em;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.search-bar button:hover {
+  background-color: #333;
+}
+
+.latest-posts {
+  padding: 0 20px;
+  margin-bottom: 200px;
+}
+
+.latest-posts h2 {
+  color: #0d0d0d;
+  font-size: 1.5em;
+  margin-bottom: 40px;
+}
+
+.post-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card {
+  background-color: #ffffff;
+  padding: 15px;
+  max-width: 300px;
+  color: #000000;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.post-card .post-image img {
+  background-color: #ffffff;
+  height: 150px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.post-card .category {
+  color: #000000;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.post-card h3 {
+  color: #000000;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.post-card p {
+  color: #494848;
+  font-size: 0.9em;
+}
+
+.new-post-form {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 600px;
+}
+
+.new-post-form h1 {
+  color: #929292;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.form-check-label {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.btn-primary {
+  background: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: #45a049;
+}
+
+.mt-3 {
+  margin-top: 20px;
+}
+
+.post-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.post h1 {
+  font-size: 2em;
+  color: #ff4757;
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.post-image img {
+  width: 100%;
+  border-radius: 5px;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-content {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+.footer {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1700px;
+  margin-top: 0 auto;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  color: #333;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.footer-right {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-column a {
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+.footer-column a:hover {
+  color: #000;
+}
+
+.plant-card {
+  display: flex;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plant-image {
+  flex: 1;
+  max-width: 300px;
+}
+
+.plant-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px 0 0 8px;
+}
+
+.plant-info {
+  flex: 2;
+  padding: 20px;
+  color: #333;
+}
+
+.plant-info h2 {
+  color: #0d0d0d;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.plant-info .category {
+  color: #ff4757;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.plant-info .description {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.plant-info p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 0;
+}
+
+.plant-info strong {
+  color: #0d0d0d;
+}
+
+.contact-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.contact-form-container {
+  flex: 1;
+}
+
+.contact-form-container h1 {
+  margin-bottom: 10px;
+}
+
+.contact-form-container p {
+  margin-bottom: 20px;
+}
+
+form .form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+form .form-group input,
+form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form .form-group textarea {
+  height: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4
+}
+

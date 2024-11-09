@@ -1,0 +1,47 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+
+{% block title %}Add New Post - My Blog{% endblock %}
+
+{% block content %}
+<main style="max-width: 2000px; margin: 5px auto; padding: 2px;">
+
+    
+    <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 40px;">
+        
+    
+        <div style="flex: 1; text-align: left;">
+            <img src="{{ plant.image.url }}" alt="Plant Image" style="width: 500px; border-radius: px; float: left; margin: 0 0 0 0;">
+            <br><br><br>
+      
+        </div>
+
+      
+        <div style="flex: 2;">
+            <h1 style="font-size: 2em; color: #333; margin-bottom: 10px;">{{ plant.name }}</h1>
+            <p style="color: #666; font-size: 1em; margin-bottom: 20px;">{{plant.category}}</p>
+            <p style="color: #555; font-size: 1em; line-height: 1.6;">
+                {{ plant.about }}
+            </p><br>
+            <strong>Native to:</strong>
+            <p style="font-size: 1em; color: #333;"> Saudi Arabia, Kuwait, USA</p><br>
+
+            <p style="font-size: 1em; color: #333;"><strong>Is Edible:</strong> {% if plant.is_edible %} Yes {% else %} No {% endif %}</p><br>
+            <strong style="font-size: 1em; color: #333;">Used For:</strong><br>
+            <p style="font-size: 1em; color: #333;">  {{ plant.used_for }}</p><br><br>
+
+            <div class="d-flex justify-content-end">
+                
+                <a href="{% url 'plants:post_update' plant.id %}" class="btn btn-primary" style="background-color: rgb(1, 97, 56); color: white; text-decoration: none;">update</a>
+                <a href="{% url 'plants:post_delete' plant.id %}" class="btn btn-primary" style="background-color: darkred; color: white; text-decoration: none;">delete</a>
+            </div>
+
+          
+        </div>
+    </div>
+
+
+
+{% endblock %}

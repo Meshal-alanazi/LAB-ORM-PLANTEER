@@ -1,0 +1,17 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="messages-page">
+    <h1>Messages from Users</h1><br><br>
+    <div class="messages-container">
+        {% for c in contact %}
+            <div class="message-card" style="margin-bottom: 20px;">
+                <h2>{{ c.first_name }}</h2><br>
+                <p><a href="mailto:{{ c.email }}">{{ c.email }}</a></p>
+                <p>{{ c.message }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

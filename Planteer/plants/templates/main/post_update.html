@@ -1,0 +1,49 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+
+{% block title %}Ubdate Post - My Blog{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-4">
+        <form class="new-post-form" action="{% url 'plants:post_update' plant.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1 class="text-center fade-in">Update:{{p.name}}</h1> 
+            
+            <input type="text" placeholder="Title" name="name" class="form-control" required value="{{post.titel}}">
+            
+            <textarea name="about" placeholder="contant" class="form-control" rows="5" required >{{p.about}}</textarea>
+            
+            
+            <label for="is_edible">Is Edible:</label>
+            <input type="checkbox" name="is_edible" id="is_edible"><br>
+            
+            <label for="category">Category:</label>
+            <select name="category" id="category" required>
+                <option value="">Select Category</option>
+                <option value="Indoor">Indoor</option>
+                <option value="Outdoor">Outdoor</option>
+                <option value="Herb">Herb</option>
+                <option value="Cactus">Cactus</option>
+            </select><br><br>
+            
+            
+
+            <div class="row">
+                <div class="col-2">
+                    <img src="{{ p.image.url }}" style="width: 100px; height: auto;" class="img-fluid" />
+                    <input type="file" name="image"/>
+            
+           <input type="submit" value="update Post" class="btn btn-primary btn-block mt-3 " />
+                </div>
+            </div>
+            </div>
+            
+
+        </form>
+    </div>
+</div>
+{% endblock %}

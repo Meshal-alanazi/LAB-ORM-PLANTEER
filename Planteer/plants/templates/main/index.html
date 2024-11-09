@@ -1,0 +1,47 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<body>
+  <div class="header">
+    <h1>Planteer</h1>
+    <p>Plant Database For Plants Lovers</p>
+    <div class="search-bar">
+      <form role="search" method="get" action="{% url 'plants:search_view'%}">
+        <input type="text" placeholder="Search For Plant..." name="search">
+        <button>Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <section class="latest-posts">
+        <div class="row">
+            <section class="latest-posts">
+                <h2>Plants</h2>
+          
+                <div class="post-grid">
+                    {% for p in plant %}
+                        <div class="post-card">
+                            <div class="post-image">
+                                <img src="{{ p.image.url }}"  >
+                                
+                                <a href="{% url 'plants:post_detail' p.id %}" style="text-decoration: none;"><h3>{{p.name}}</h3></a>
+                                <p>{{p.about}}</p>
+                                <h4>{{p.category}}</h4>
+                            </div>
+
+                            
+                            
+                         
+                        </div>
+                    {% endfor %}
+            
+        </div>
+    </section>
+</div>
+</body>
+</html>
+
+{% endblock %}

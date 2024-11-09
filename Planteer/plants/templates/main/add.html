@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+
+{% block title %}Add New Post - My Blog{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-4">
+        <form class="new-post-form" action="{% url 'plants:add_plant' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1 class="text-center fade-in">Add Plants</h1> 
+            
+            <input type="text" placeholder="Title" name="name" class="form-control" required>
+            
+            <textarea name="about" placeholder="about" class="form-control" rows="2" required></textarea>
+        
+            <textarea name="used_for" placeholder="used for" class="form-control" rows="5" required></textarea>
+           
+            <label for="is_edible">Is Edible:</label>
+            <input type="checkbox" name="is_edible" id="is_edible"><br><br>
+            
+            <label for="category">Category:</label>
+            <select name="category" id="category" required>
+                <option value="">Select Category</option>
+                <option value="Tree">Tree</option>
+                <option value="Fruit">Fruit</option>
+                <option value="Herb">Herb</option>
+                <option value="Cactus">Cactus</option>
+            </select><br><br>
+            
+            <input type="file" name="image"/>
+            
+            <input type="submit" value="Create Post" class="btn btn-primary btn-block mt-3" />
+        </form>
+    </div>
+</div>
+{% endblock %}

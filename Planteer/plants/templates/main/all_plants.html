@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+
+
+{% block content %}
+<div class="row">
+    <section class="latest-posts">
+        <div class="row">
+            <section class="latest-posts">
+                <h2>Latest Posts</h2>
+                <div class="post-grid">
+                    {% for p in plant %}
+                        <div class="post-card">
+                            <div class="post-image">
+                                <img src="{{ p.image.url }}"  >
+                                <a href="{% url 'plants:post_detail' p.id %}"><span class="category">{{ p.titel }}</span></a>
+                                <a href="{% url 'plants:post_detail' p.id %}"><h3>{{p.name}}</h3></a>
+                                <p>{{p.about}}</p>
+                            </div>
+
+                            
+                            
+                         
+                        </div>
+                    {% endfor %}
+            
+        </div>
+    </section>
+                     
+{% endblock content %}  

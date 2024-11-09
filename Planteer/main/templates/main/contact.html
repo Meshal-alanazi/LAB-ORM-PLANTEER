@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="contact-page">
+    <div class="contact-form-container">
+        
+        <h1>Contact Us</h1>
+        <p>Subheading for description or Instructions</p>
+        <form action="{% url 'main:contact_view' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" placeholder="First name" name="first_name">
+                <input type="text" placeholder="Last name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email address" name="email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Enter your question or message" name="message"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+</div>
+
+{% endblock %}
